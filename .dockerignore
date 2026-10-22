@@ -1,0 +1,13 @@
+.git
+.venv
+venv
+**/__pycache__
+frontend/node_modules
+frontend/dist
+data/*.db*
+data/.dev_secret
+data/uploads
+data/generated
+data/master_cv
+data/browser-profile
+.env
