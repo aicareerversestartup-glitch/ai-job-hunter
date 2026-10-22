@@ -1,0 +1,9 @@
+# Automatic HTTPS (Let's Encrypt) for your domain. Point your domain's DNS A record at the server first.
+{$DOMAIN} {
+	encode gzip zstd
+	reverse_proxy app:8000
+	header {
+		Strict-Transport-Security "max-age=31536000; includeSubDomains"
+		-Server
+	}
+}
