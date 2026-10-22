@@ -1,0 +1,3 @@
+# Add skills the matcher should recognise, one per line: Canonical name|alias|alias
+# Example:
+# Teamcenter|teamcenter plm|siemens teamcenter

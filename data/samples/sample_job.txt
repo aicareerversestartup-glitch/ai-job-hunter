@@ -1,0 +1,19 @@
+About the role
+We are hiring a Senior Mechanical Design Engineer for our EV battery enclosure team in Bengaluru.
+
+Responsibilities
+- Design sheet metal enclosures and brackets in SolidWorks or Creo.
+- Run FEA in ANSYS and support CFD thermal studies.
+- Own drawings and tolerance stack-ups.
+
+Requirements
+- Bachelor's degree in Mechanical Engineering.
+- 5+ years of experience in mechanical design.
+- Strong knowledge of GD&T and DFMEA.
+- Must be authorized to work in India.
+
+Nice to have
+- Experience with Python scripting and Six Sigma.
+- PMP certification.
+
+This is a full-time, on-site role.

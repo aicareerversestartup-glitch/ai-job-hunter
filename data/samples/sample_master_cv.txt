@@ -1,0 +1,31 @@
+PRIYA SHARMA
+Mechanical Design Engineer
+priya.sharma@example.com | +91 98765 43210 | Pune, India | linkedin.com/in/priya-sharma-example
+
+PROFESSIONAL SUMMARY
+Mechanical design engineer with experience in product design, FEA and design for manufacturing for automotive components.
+
+WORK EXPERIENCE
+Design Engineer | Tata AutoComp Systems | Jan 2021 – Present
+- Designed sheet metal and injection molded brackets in SolidWorks for 4 passenger-vehicle programs.
+- Ran static and fatigue FEA in ANSYS, reducing bracket mass by 12% while meeting load targets.
+- Prepared 2D drawings with GD&T and released them through the PLM workflow.
+- Led DFMEA reviews with suppliers and the quality team to close 30+ design risks.
+
+Graduate Engineer Trainee | Mahindra & Mahindra | Jul 2019 – Dec 2020
+- Supported tooling and fixture design using AutoCAD and CATIA.
+- Performed root cause analysis on assembly-line defects, cutting rework by 8%.
+- Built Excel dashboards to track PPAP status for 40 suppliers.
+
+EDUCATION
+B.Tech in Mechanical Engineering, College of Engineering Pune (2015 – 2019)
+
+SKILLS
+SolidWorks, CATIA, AutoCAD, ANSYS, FEA, GD&T, DFMEA, Sheet Metal, Injection Molding, Root Cause Analysis, PPAP, MATLAB, Excel
+
+CERTIFICATIONS
+Certified SolidWorks Professional (CSWP)
+Lean Six Sigma Green Belt
+
+LANGUAGES
+English, Hindi, Marathi

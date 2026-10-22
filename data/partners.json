@@ -1,0 +1,10 @@
+{
+  "_note": "Partner / affiliate links shown on the Resources page. Replace each url with YOUR affiliate link after joining that partner's program, and set enabled to true. Links are labelled as partner links in the app. Never add a partner that receives users' CVs or personal data.",
+  "partners": [
+    {"id": "ielts", "name": "IELTS preparation course", "category": "Language tests", "description": "Most skilled-worker routes (UK, Canada, Australia) need an English test score. A prep course helps you reach the band you need.", "countries": ["United Kingdom", "Canada", "Australia", "New Zealand"], "url": "", "enabled": false, "disclosure": "Partner link: we may earn a commission at no extra cost to you."},
+    {"id": "german", "name": "German language course", "category": "Language", "description": "Even English-speaking roles in Germany go further with A2–B1 German.", "countries": ["Germany", "Austria", "Switzerland"], "url": "", "enabled": false, "disclosure": "Partner link: we may earn a commission at no extra cost to you."},
+    {"id": "credential-eval", "name": "Education credential evaluation", "category": "Visa documents", "description": "Canada's Express Entry and some US employers ask for an evaluation of your Indian degree.", "countries": ["Canada", "United States"], "url": "", "enabled": false, "disclosure": "Partner link: we may earn a commission at no extra cost to you."},
+    {"id": "intl-transfer", "name": "International money transfer", "category": "Relocation", "description": "Low-fee transfers for deposits and first-month costs abroad.", "countries": [], "url": "", "enabled": false, "disclosure": "Partner link: we may earn a commission at no extra cost to you."},
+    {"id": "health-insurance", "name": "Travel and health insurance for expats", "category": "Relocation", "description": "Cover for the period between arriving and joining your employer's plan.", "countries": [], "url": "", "enabled": false, "disclosure": "Partner link: we may earn a commission at no extra cost to you."}
+  ]
+}
