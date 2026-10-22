@@ -13,7 +13,7 @@
   <img alt="Python" src="https://img.shields.io/badge/Python-3.11+-0f1b2d?logo=python&logoColor=white">
   <img alt="FastAPI" src="https://img.shields.io/badge/FastAPI-backend-0b7a5c?logo=fastapi&logoColor=white">
   <img alt="React" src="https://img.shields.io/badge/React-TypeScript-0f1b2d?logo=react&logoColor=61dafb">
-  <img alt="Capacitor" src="https://img.shields.io/badge/Capacitor-Android%20%7C%20iOS-0b7a5c?logo=capacitor&logoColor=white">
+  <img alt="Capacitor" src="https://img.shields.io/badge/Capacitor-Android%20%7C%20iOS-0b7a5c">
   <img alt="Playwright" src="https://img.shields.io/badge/Playwright-apply%20assistant-0f1b2d?logo=playwright">
   <img alt="Docker" src="https://img.shields.io/badge/Docker-Compose%20%2B%20Caddy-0b7a5c?logo=docker&logoColor=white">
 </p>
@@ -76,23 +76,22 @@ Upload any CV once. The app:
 
 ```mermaid
 flowchart LR
-  subgraph Clients
-    W[Website / PWA]
-    A[Android app]
-    I[iOS app]
-  end
-  W & A & I -->|HTTPS| API[FastAPI]
-  API --> CV[CV parser & structurer]
-  API --> M[Matcher & ranking]
-  API --> G[Generator + truthfulness guard]
-  API --> AP[Approval state machine]
-  AP --> PW[Playwright apply assistant]
-  S[Scheduler / worker] --> D[Job discovery]
-  D --> SRC[(Official job APIs & career boards)]
-  D --> N[Normalize · dedupe · fraud check] --> M
-  S --> IN[Inbox tracker, read-only IMAP]
-  G --> AI[(AI provider of the user's choice)]
-  API & S --> DB[(PostgreSQL / SQLite)]
+  W["Website / PWA"] --> API["FastAPI"]
+  A["Android app"] --> API
+  I["iOS app"] --> API
+  API --> CV["CV parser and structurer"]
+  API --> M["Matcher and ranking"]
+  API --> G["Generator + truthfulness guard"]
+  API --> AP["Approval state machine"]
+  AP --> PW["Playwright apply assistant"]
+  S["Scheduler / worker"] --> D["Job discovery"]
+  D --> SRC[("Official job APIs and career boards")]
+  D --> N["Normalize, dedupe, fraud check"]
+  N --> M
+  S --> IN["Inbox tracker, read-only IMAP"]
+  G --> AI[("AI provider of the user's choice")]
+  API --> DB[("PostgreSQL / SQLite")]
+  S --> DB
 ```
 
 ## Tech stack
