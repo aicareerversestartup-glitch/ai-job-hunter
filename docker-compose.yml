@@ -1,0 +1,68 @@
+# Public deployment: PostgreSQL + app (website + API for the mobile apps) + background worker + Caddy (HTTPS).
+#   cp .env.example .env   # set DOMAIN, PUBLIC_URL, SECRET_KEY, POSTGRES_PASSWORD, and the rest
+#   docker compose up -d --build
+# Then open https://YOUR_DOMAIN
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: jobhunter
+      POSTGRES_USER: jobhunter
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U jobhunter -d jobhunter"]
+      interval: 5s
+      retries: 10
+
+  app:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://jobhunter:${POSTGRES_PASSWORD}@db:5432/jobhunter
+      RUN_SCHEDULER: "false"
+      APP_ENV: production
+      PLAYWRIGHT_HEADLESS: "true"
+      CORS_ORIGINS: ${PUBLIC_URL:-http://localhost:8000},capacitor://localhost,https://localhost,http://localhost
+    depends_on:
+      db:
+        condition: service_healthy
+    expose:
+      - "8000"
+    volumes:
+      - appdata:/data
+
+  worker:
+    build: .
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      DATABASE_URL: postgresql+psycopg://jobhunter:${POSTGRES_PASSWORD}@db:5432/jobhunter
+    command: ["python", "-m", "backend.worker"]
+    depends_on:
+      app:
+        condition: service_healthy
+    volumes:
+      - appdata:/data
+
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    environment:
+      DOMAIN: ${DOMAIN:?Set DOMAIN in .env, e.g. jobs.example.com}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddydata:/data
+    depends_on:
+      - app
+
+volumes:
+  pgdata:
+  appdata:
+  caddydata:
